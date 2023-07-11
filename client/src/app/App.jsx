@@ -21,15 +21,16 @@ function App() {
         // message.success('Logged in successfully');
       } catch (error) {
         if (error.response && error.response.status === 401) {
-          message.error('Not authorized');
+          message.error('Not authorized please login');
           // Handle unauthorized error here, e.g., redirect to login page
         } else {
-          console.error(error);
+          message.error("Server Error contact stevonene")
+          // console.error(error);
         }
       }
     };
     fetchData();
-  }, []); // Empty dependency array to run the effect only once
+  }, [isLoggedIn]); // Empty dependency array to run the effect only once
 
   return (
     <Routes>

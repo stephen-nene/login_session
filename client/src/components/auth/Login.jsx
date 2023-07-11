@@ -22,7 +22,9 @@ function App() {
           dispatch(login(response.data));
       // Process the response data here
     } catch (error) {
-      console.error(error);
+      let err = error.response.data.error
+      console.error(error.response);
+      message.info(err)
       // Handle any errors here
     }
   };  
